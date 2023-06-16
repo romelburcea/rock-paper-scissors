@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <script>
+    let playerSelection = "";
+    let computerSelection = "";
+    let score = 0;
+
+    function getComputerChoice() {
+      let random = Math.floor(Math.random() * 3) + 1;
+      switch (random) {
+        case 1:
+          return "rock";
+
+        case 2:
+          return "paper";
+
+        case 3:
+          return "scissors";
+      }
+    }
+
+    function playRound(player, computer) {
+      if (player == "rock") {
+        if (computer == "rock") {
+          console.log("Draw");
+        } else if (computer == "paper") {
+          console.log("You lost to an AI, too bad...");
+        } else {
+          console.log("Good job. By sheer luck only, you beat the system!");
+          score++;
+        }
+      } else if (player == "paper") {
+        if (computer == "paper") {
+          console.log("Draw");
+        } else if (computer == "scissors") {
+          console.log("You lost to an AI, too bad...");
+        } else {
+          console.log("Good job. By sheer luck only, you beat the system!");
+          score++;
+        }
+      } else if (player == "scissors") {
+        if (computer == "scissors") {
+          console.log("Draw");
+        } else if (computer == "rock") {
+          console.log("You lost to an AI, too bad...");
+        } else {
+          console.log("Good job. By sheer luck only, you beat the system!");
+          score++;
+        }
+      }
+    }
+
+    function game() {
+      for(let i = 0; i < 5; i++) {
+                const playerSelection = window.prompt("Type: rock, paper, scissors.").toLowerCase();
+                const computerSelection = getComputerChoice();
+                console.log("The computer chose: " + computerSelection);
+                console.log("You chose: " + playerSelection);
+                playRound(playerSelection, computerSelection);
+            }
+    }
+
+    game();
+    console.log("The score is: " + score);
+  </script>
+  <body></body>
+</html>
