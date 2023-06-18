@@ -1,0 +1,23 @@
+body{
+    background: #27374D;
+    color: aliceblue;
+    font-family: "Comic Sans MS";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    font-size: 50px;
+}
+
+.choiceButton{
+    width: 300px;
+    height: 300px;
+    background: #526D82;
+    color: aliceblue;
+    font-size: 50px;
+    font-family: "Comic Sans MS";
+}
+
